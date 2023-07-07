@@ -1,0 +1,14 @@
+$color-primary: #212428;
+$color-secondary: #2B3037;
+$main-vue: #00FF7F;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-secondary;
+}
