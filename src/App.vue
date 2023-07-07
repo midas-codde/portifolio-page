@@ -29,12 +29,14 @@ import svgHome from './components/vue-design/svgHome.vue'
         </div>
         <h1>Olá, eu sou <span>Midas</span>!</h1>
         <h2>Desenvolvedor Front end</h2>
-        <p>Sou desenvolvedor web, atualmente focado em Front-end.
+        <p class="text-content">Sou desenvolvedor web, atualmente focado em Front-end.
           Tenho experiência com Freelancer e projetos pessoais.
           Estudo um pouco de Back-end com a finalidade de um dia
           me tornar um Programador FullStack.</p>
-        <div class="btn-left">Saiba mais</div>
-        <div class="btn-right">Fale comigo!</div>
+        <div class="btns-row">
+          <div class="btn-left">Saiba mais</div>
+          <div class="btn-right">Fale comigo!</div>
+        </div>
         <svgHome class="svg-home" />
       </div>
     </div>
@@ -42,6 +44,8 @@ import svgHome from './components/vue-design/svgHome.vue'
 </template>
 
 <style lang="scss" scoped>
+// VAR
+
 $color-primary: #212428;
 $color-secondary: #2B3037;
 $main-vue: #00FF7F;
@@ -127,6 +131,13 @@ $main-vue: #00FF7F;
         width: 570px;
       }
 
+      .btns-row {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+      }
+
       .btn-left {
         width: 167px;
         height: 45px;
@@ -140,9 +151,8 @@ $main-vue: #00FF7F;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        position: absolute;
-        bottom: 0;
         transition: all 0.2s;
+        margin-right: 40px;
 
         &:hover {
           box-shadow: inset 0px 0px 15px 1px $main-vue;
@@ -150,8 +160,6 @@ $main-vue: #00FF7F;
       }
 
       .btn-right {
-        position: absolute;
-        bottom: 0;
         left: 230px;
         width: 167px;
         height: 45px;
@@ -190,6 +198,7 @@ $main-vue: #00FF7F;
       align-items: center;
       justify-content: center;
       position: relative;
+
 
       .logo {
         position: absolute;
@@ -249,4 +258,65 @@ $main-vue: #00FF7F;
     }
   }
 }
+
+@media screen and (max-width: 1110px) {
+  .home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .svg-home {
+    scale: .8;
+    left: 43%;
+    transform: translate(-50%);
+    top: 550px;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 940px) {
+
+  .nav-bar {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-content {
+    h1 {
+      font-size: 2rem !important;
+    }
+
+    h2 {
+      font-size: 2rem !important;
+    }
+
+    .text-content {
+      width: 400px !important;
+      font-size: .7rem !important;
+    }
+
+    .btn-left,.btn-right {
+      bottom: 30px !important;
+      width: 150px !important;
+    }
+
+    .btns-row {
+      bottom: 50px !important;
+    }
+
+    .svg-home {
+      width: 500px !important;
+      top: 450px !important;
+    }
+  }
+
+}
+
+
+//===== HOME END =====
 </style>
