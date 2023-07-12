@@ -62,6 +62,66 @@ import svgPc from './components/vue-design/svgPc.vue';
       </div>
     </div>
   </div>
+  <div class="skills-container">
+    <div class="skills-center">
+      <div class="skills-text">
+        <div class="skills-line"></div>
+        <h1>Conhecimentos</h1>
+        <h2>Tecnologias que uso no meu dia a dia</h2>
+        <div class="skills-line"></div>
+      </div>
+      <div class="skills-content">
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/html-icon.png" alt="">
+            <h2>HTML5</h2>
+            <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente proposto por Opera Software.</p>
+          </div>
+        </div>
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/css-icon.png" alt="">
+            <h2>CSS3</h2>
+            <p>Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.</p>
+          </div>
+        </div>
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/js-icon.png" alt="">
+            <h2 style="width: 125px;">Java Script</h2>
+            <p>JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma, juntamente com HTML e CSS.</p>
+          </div>
+        </div>
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/vue-icon.png" alt="">
+            <h2>VueJs</h2>
+            <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e aplicativos de página única.</p>
+          </div>
+        </div>
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/react-icon.png" alt="">
+            <h2>ReactJs</h2>
+            <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.</p>
+          </div>
+        </div>
+        <div class="skills-itens">
+          <div class="itens-icon">
+            <div class="itens-bg"></div>
+            <img src="./assets/icons/php-icon.png" alt="">
+            <h2>PHP</h2>
+            <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -510,22 +570,162 @@ $main-vue: #00FF7F;
       width: 600px !important;
       bottom: -100px !important;
     }
+    .about-right {
+      align-items: start !important;
+  
+      h2 {
+        font-size: 2rem !important;
+      }
+  
+      p {
+        font-size: .8rem !important;
+        width: 350px !important;
+      }
+    }
   }
 
-  .about-right {
-    align-items: start !important;
-
-    h2 {
-      font-size: 2rem !important;
-    }
-
-    p {
-      font-size: .8rem !important;
-      width: 350px !important;
-    }
-  }
 
 }
 
 //===== ABOUT END =====
+
+.skills-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-primary;
+  display: flex;
+  justify-content: center;
+
+  .skills-center {
+    width: 1600px;
+    height: 100%;
+
+    .skills-text {
+      display: flex;
+      width: 100%;
+      height: 200px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h1 {
+        margin: 0 50px;
+        color: #ffff;
+        font-family: Open sans;
+        font-weight: 400;
+      }
+
+      h2 {
+        position: absolute;
+        bottom: 30px;
+        color: #ffff;
+        font-family: Fira code;
+        font-weight: 300;
+      }
+
+      .skills-line {
+        width: 500px;
+        height: 5px;
+        background-color: $main-vue;
+        border-radius: 5px;
+      }
+    }
+
+    .skills-content {
+      width: 100%;
+      height: 750px;
+      display: flex;
+
+      .skills-itens {
+        width: 16.66%;
+        height: 80%;
+        border: 1px solid #006B35;
+        transition: .5s all;
+        overflow-x: hidden;
+
+        .itens-icon {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow-y: hidden;
+          overflow-x: hidden;
+          // background-color: red;
+          transition: .5s all;
+
+          &:not(:hover) {
+            filter: grayscale(1);
+          }
+
+          &:hover .itens-bg {
+            bottom: 0px;
+          }
+
+          &:hover img {
+            width: 150px;
+            top: 80px;
+          }
+
+          &:hover h2 {
+            top: 270px;
+          }
+
+          .itens-bg {
+            background: rgb(0, 255, 112);
+            background: linear-gradient(0deg, rgba(0, 255, 110, 0.596) 0%, rgba(22, 22, 22, 0) 20%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: -150px;
+            transition: all .5s;
+          }
+
+          img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 150px;
+            transition: .4s all;
+            width: 100px;
+
+          }
+
+          h2 {
+            position: absolute;
+            color: #FFF;
+            font-family: Open sans;
+            font-weight: 600;
+            top: 300px;
+            left: 50%;
+            transition: .4s all;
+            transform: translateX(-50%);
+          }
+
+          &:not(:hover) p {
+            opacity: 0;
+            bottom: 120px;
+          }
+
+          p {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            bottom: 180px;
+            font-size: .9rem;
+            transition: .5s all;
+            color: #fff;
+            font-family: Open sans;
+            text-align: center;
+          }
+        }
+
+        &:hover {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+
+}
 </style>
