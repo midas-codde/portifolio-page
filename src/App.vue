@@ -76,7 +76,8 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-bg"></div>
             <img src="./assets/icons/html-icon.png" alt="">
             <h2>HTML5</h2>
-            <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente proposto por Opera Software.</p>
+            <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente
+              proposto por Opera Software.</p>
           </div>
         </div>
         <div class="skills-itens">
@@ -92,7 +93,8 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-bg"></div>
             <img src="./assets/icons/js-icon.png" alt="">
             <h2 style="width: 125px;">Java Script</h2>
-            <p>JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma, juntamente com HTML e CSS.</p>
+            <p>JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem
+              dinâmica fraca e multiparadigma, juntamente com HTML e CSS.</p>
           </div>
         </div>
         <div class="skills-itens">
@@ -100,7 +102,8 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-bg"></div>
             <img src="./assets/icons/vue-icon.png" alt="">
             <h2>VueJs</h2>
-            <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e aplicativos de página única.</p>
+            <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e
+              aplicativos de página única.</p>
           </div>
         </div>
         <div class="skills-itens">
@@ -108,7 +111,8 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-bg"></div>
             <img src="./assets/icons/react-icon.png" alt="">
             <h2>ReactJs</h2>
-            <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.</p>
+            <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em
+              páginas web.</p>
           </div>
         </div>
         <div class="skills-itens">
@@ -116,7 +120,9 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-bg"></div>
             <img src="./assets/icons/php-icon.png" alt="">
             <h2>PHP</h2>
-            <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor.</p>
+            <h3>(básico)</h3>
+            <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações
+              presentes e atuantes no lado do servidor.</p>
           </div>
         </div>
       </div>
@@ -570,13 +576,14 @@ $main-vue: #00FF7F;
       width: 600px !important;
       bottom: -100px !important;
     }
+
     .about-right {
       align-items: start !important;
-  
+
       h2 {
         font-size: 2rem !important;
       }
-  
+
       p {
         font-size: .8rem !important;
         width: 350px !important;
@@ -668,6 +675,9 @@ $main-vue: #00FF7F;
           &:hover h2 {
             top: 270px;
           }
+          &:hover h3 {
+            top: 300px;
+          }
 
           .itens-bg {
             background: rgb(0, 255, 112);
@@ -694,7 +704,18 @@ $main-vue: #00FF7F;
             color: #FFF;
             font-family: Open sans;
             font-weight: 600;
-            top: 300px;
+            top: 290px;
+            left: 50%;
+            transition: .4s all;
+            transform: translateX(-50%);
+          }
+
+          h3 {
+            position: absolute;
+            color: #FFF;
+            font-family: Open sans;
+            font-weight: 600;
+            top: 320px;
             left: 50%;
             transition: .4s all;
             transform: translateX(-50%);
@@ -728,4 +749,14 @@ $main-vue: #00FF7F;
 
 
 }
+
+@media screen and (max-width: 1110px) {
+
+  .skills-container {
+    margin-top: 300px;
+    // width: 100%;
+  }
+
+}
+
 </style>
