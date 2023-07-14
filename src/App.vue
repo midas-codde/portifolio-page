@@ -71,58 +71,64 @@ import svgPc from './components/vue-design/svgPc.vue';
         <div class="skills-line"></div>
       </div>
       <div class="skills-content">
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/html-icon.png" alt="">
-            <h2>HTML5</h2>
-            <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente
-              proposto por Opera Software.</p>
+        <div class="skills-flex">
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/html-icon.png" alt="">
+              <h2>HTML5</h2>
+              <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente
+                proposto por Opera Software.</p>
+            </div>
+          </div>
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/css-icon.png" alt="">
+              <h2>CSS3</h2>
+              <p>Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.</p>
+            </div>
           </div>
         </div>
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/css-icon.png" alt="">
-            <h2>CSS3</h2>
-            <p>Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.</p>
+        <div class="skills-flex">
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/js-icon.png" alt="">
+              <h2 style="width: 125px;">Java Script</h2>
+              <p>JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem
+                dinâmica fraca e multiparadigma, juntamente com HTML e CSS.</p>
+            </div>
+          </div>
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/vue-icon.png" alt="">
+              <h2>VueJs</h2>
+              <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e
+                aplicativos de página única.</p>
+            </div>
           </div>
         </div>
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/js-icon.png" alt="">
-            <h2 style="width: 125px;">Java Script</h2>
-            <p>JavaScript é uma linguagem de programação interpretada estruturada, de script em alto nível com tipagem
-              dinâmica fraca e multiparadigma, juntamente com HTML e CSS.</p>
+        <div class="skills-flex">
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/react-icon.png" alt="">
+              <h2>ReactJs</h2>
+              <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em
+                páginas web.</p>
+            </div>
           </div>
-        </div>
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/vue-icon.png" alt="">
-            <h2>VueJs</h2>
-            <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e
-              aplicativos de página única.</p>
-          </div>
-        </div>
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/react-icon.png" alt="">
-            <h2>ReactJs</h2>
-            <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em
-              páginas web.</p>
-          </div>
-        </div>
-        <div class="skills-itens">
-          <div class="itens-icon">
-            <div class="itens-bg"></div>
-            <img src="./assets/icons/php-icon.png" alt="">
-            <h2>PHP</h2>
-            <h3>(básico)</h3>
-            <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações
-              presentes e atuantes no lado do servidor.</p>
+          <div class="skills-itens">
+            <div class="itens-icon">
+              <div class="itens-bg"></div>
+              <img src="./assets/icons/php-icon.png" alt="">
+              <h2>PHP</h2>
+              <h3>(básico)</h3>
+              <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações
+                presentes e atuantes no lado do servidor.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -642,9 +648,16 @@ $main-vue: #00FF7F;
       width: 100%;
       height: 750px;
       display: flex;
+      flex-direction: row;
+
+      .skills-flex {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
 
       .skills-itens {
-        width: 16.66%;
+        width: 50%;
         height: 80%;
         border: 1px solid #006B35;
         transition: .5s all;
@@ -741,7 +754,7 @@ $main-vue: #00FF7F;
         }
 
         &:hover {
-          width: 30%;
+          width: 65%;
         }
       }
     }
@@ -754,9 +767,43 @@ $main-vue: #00FF7F;
 
   .skills-container {
     margin-top: 300px;
-    // width: 100%;
+    height: 2300px;
+  }
+
+  .skills-content {
+    flex-direction: column !important;
+    height: 2500px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .skills-flex {
+    width: 50% !important;
+    height: 700px !important;
+    align-items: center;
+  }
+
+  .skills-itens {
+    height: 95% !important;
   }
 
 }
+
+@media screen and (max-width: 750px) {
+  .skills-flex {
+    flex-direction: column;
+    height: 100% !important;
+  }
+
+  .skills-container {
+    height: 3850px !important;
+  }
+
+  .skills-content {
+    height: 3600px !important;
+  }
+}
+
+//===== SKILLS END =====
 
 </style>
