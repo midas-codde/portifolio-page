@@ -5,7 +5,7 @@ import svgCode from './components/vue-design/svgCode.vue';
 import svgHome from './components/vue-design/svgHome.vue'
 import svgPc from './components/vue-design/svgPc.vue';
 //  import svgPc from './components/vue-design/svgPc.vue'
-//  import svgProjects from './vue-design/components/svgProjects.vue'
+import svgProjects from './components/vue-design/svgProjects.vue'
 </script>
 
 <template>
@@ -77,7 +77,8 @@ import svgPc from './components/vue-design/svgPc.vue';
               <div class="itens-bg"></div>
               <img src="./assets/icons/html-icon.png" alt="">
               <h2>HTML5</h2>
-              <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente
+              <p>HTML5 é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet,
+                originalmente
                 proposto por Opera Software.</p>
             </div>
           </div>
@@ -104,7 +105,7 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-icon">
               <div class="itens-bg"></div>
               <img src="./assets/icons/vue-icon.png" alt="">
-              <h2>VueJs</h2>
+              <h2>Vue Js</h2>
               <p>Vue.js é um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e
                 aplicativos de página única.</p>
             </div>
@@ -115,7 +116,7 @@ import svgPc from './components/vue-design/svgPc.vue';
             <div class="itens-icon">
               <div class="itens-bg"></div>
               <img src="./assets/icons/react-icon.png" alt="">
-              <h2>ReactJs</h2>
+              <h2>React Js</h2>
               <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em
                 páginas web.</p>
             </div>
@@ -134,6 +135,45 @@ import svgPc from './components/vue-design/svgPc.vue';
       </div>
     </div>
   </div>
+  <div class="projects-container">
+    <div class="projects-center">
+      <div class="projects-left">
+        <h1>Projetos</h1>
+        <div class="projects-line"></div>
+        <svgProjects class="svg-projects" />
+      </div>
+      <div class="projects-right">
+        <div class="projects-row">
+          <div class="projects-content">
+            <img class="project-img" src="../src/imgs/project1.png" alt="">
+            <h2>Jogo da Forca</h2>
+            <p>Jogo da forca desenvolvido em JavaScript com interação de cores definidas.</p>
+          </div>
+          <div class="projects-content">
+            <img class="project-img" src="../src/imgs/project2.png" alt="">
+            <h2>Company Plataform</h2>
+            <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa.</p>
+          </div>
+        </div>
+        <div class="projects-row">
+          <div class="projects-content">
+            <h3>Em breve</h3>
+          </div>
+          <div class="projects-content">
+            <h3>Em breve</h3>
+          </div>
+        </div>
+        <div class="projects-row">
+          <div class="projects-content">
+            <h3>Em breve</h3>
+          </div>
+          <div class="projects-content">
+            <h3>Em breve</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -141,6 +181,136 @@ import svgPc from './components/vue-design/svgPc.vue';
 $color-primary: #212428;
 $color-secondary: #2B3037;
 $main-vue: #00FF7F;
+
+
+.projects-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .projects-center {
+    width: 1700px;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+    .projects-left {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 40%;
+      height: 100%;
+
+      h1 {
+        color: #FFF;
+        text-shadow: -4px -3px 0px #0F0;
+        font-family: Fira Code;
+        font-size: 2.5rem;
+        font-weight: 600;
+        left: 50px;
+        top: 50px;
+        position: absolute;
+      }
+
+      .projects-line {
+        top: 130px;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-color: $main-vue;
+      }
+
+      .svg-projects {
+        width: 130%;
+      }
+    }
+
+    .projects-right {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .projects-row {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .projects-content {
+          width: 35%;
+          height: 250px;
+          border: 3px solid #00FF7F;
+          margin: 0 30px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all .3s;
+          position: relative;
+
+          h3 {
+            color: $main-vue;
+            font-family: Open Sans;
+          }
+
+
+          &:hover {
+            scale: 1.2;
+          }
+
+          &:hover h2 {
+            top: 40px;
+            opacity: 1;
+          }
+          
+          &:hover p {
+            bottom: 40px;
+            opacity: 1;
+          }
+
+          h2 {
+            top: 10px;
+            left: 30px;
+            position: absolute;
+            font-family: Open sans;
+            color: $main-vue;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          p {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            color: #fff;
+            font-family: Open sans;
+            width: 80%;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          .project-img {
+            width: 100%;
+            height: 100%;
+            transition: all .4s;
+
+            &:hover {
+              opacity: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .home-container {
   width: 100vw;
@@ -688,6 +858,7 @@ $main-vue: #00FF7F;
           &:hover h2 {
             top: 270px;
           }
+
           &:hover h3 {
             top: 300px;
           }
@@ -805,5 +976,4 @@ $main-vue: #00FF7F;
 }
 
 //===== SKILLS END =====
-
 </style>
