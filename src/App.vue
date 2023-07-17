@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import svgBg from './components/svg/svgBg.vue'
 import svgCode from './components/vue-design/svgCode.vue';
-//  import svgAbout from './components/vue-design/svgAbout.vue'
+import svgBgFooter from './components/svg/svgBgFooter.vue'
 import svgHome from './components/vue-design/svgHome.vue'
 import svgPc from './components/vue-design/svgPc.vue';
-//  import svgPc from './components/vue-design/svgPc.vue'
 import svgProjects from './components/vue-design/svgProjects.vue'
+import svgContact from './components/vue-design/svgContact.vue'
 </script>
 
 <template>
@@ -176,6 +176,29 @@ import svgProjects from './components/vue-design/svgProjects.vue'
       </div>
     </div>
   </div>
+  <div class="contact-container">
+    <svgBgFooter class="svgBgFooter" />
+    <div class="contact-center">
+      <div class="contact-left">
+        <h2>Tem interesse no meu trabalho?</h2>
+        <h3>Entre em contato comigo :&#41</h3>
+        <div class="contact-row">
+          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+              src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+              src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+              src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
+        </div>
+        <a class="contact-btn" href="https://github.com/RichardMidas">
+          <img class="contact-git" src="../src/assets/icons/github.png" alt="">
+        </a>
+      </div>
+      <div class="contact-right">
+        <svgContact />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -183,190 +206,6 @@ import svgProjects from './components/vue-design/svgProjects.vue'
 $color-primary: #212428;
 $color-secondary: #2B3037;
 $main-vue: #00FF7F;
-
-
-.projects-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-
-  .projects-center {
-    width: 1700px;
-    height: 100%;
-    display: flex;
-    position: relative;
-
-    h1 {
-      color: #FFF;
-      text-shadow: -4px -3px 0px #0F0;
-      font-family: Fira Code;
-      font-size: 2.5rem;
-      font-weight: 600;
-      left: 50px;
-      top: 50px;
-      position: absolute;
-    }
-
-    .projects-line {
-      top: 130px;
-      position: absolute;
-      width: 500px;
-      left: 30px;
-      height: 5px;
-      background-color: $main-vue;
-    }
-
-    .projects-left {
-      display: flex;
-      position: relative;
-      align-items: center;
-      width: 40%;
-      height: 100%;
-
-
-      .svg-projects {
-        width: 130%;
-      }
-    }
-
-    .projects-right {
-      width: 60%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-
-      .projects-row {
-        width: 100%;
-        height: 33%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-
-        .projects-content {
-          width: 35%;
-          height: 250px;
-          border: 3px solid #00FF7F;
-          margin: 0 30px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all .3s;
-          position: relative;
-
-          h3 {
-            color: $main-vue;
-            font-family: Open Sans;
-            transition: all .5s;
-          }
-
-          &:hover h3 {
-            letter-spacing: 3px;
-          }
-
-
-          &:hover {
-            scale: 1.2;
-          }
-
-          &:hover h2 {
-            top: 40px;
-            opacity: 1;
-          }
-
-          &:hover p {
-            bottom: 40px;
-            opacity: 1;
-          }
-
-          h2 {
-            top: 10px;
-            left: 30px;
-            position: absolute;
-            font-family: Open sans;
-            color: $main-vue;
-            opacity: 0;
-            transition: all .5s;
-            pointer-events: none;
-          }
-
-          p {
-            position: absolute;
-            bottom: 10px;
-            left: 30px;
-            color: #fff;
-            font-family: Open sans;
-            width: 80%;
-            opacity: 0;
-            transition: all .5s;
-            pointer-events: none;
-          }
-
-          .project-img {
-            width: 100%;
-            height: 100%;
-            transition: all .4s;
-
-            &:hover {
-              opacity: 5%;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1110px) {
-
-  .projects-center {
-    h1 {
-      top: -200px !important;
-      left: 50% !important;
-      transform: translateX(-50%);
-    }
-  }
-
-  .projects-line {
-    top: -130px !important;
-    left: 50% !important;
-    transform: translateX(-50%);
-  }
-
-  .projects-container {
-    margin-top: 300px;
-  }
-
-  .projects-left {
-    display: none !important;
-  }
-
-  .projects-right {
-    width: 100% !important;
-  }
-
-}
-
-@media screen and (max-width: 600px) {
-  .projects-row {
-    flex-direction: column;
-    margin: 1px;
-    height: 700px !important;
-  }
-
-  .projects-container {
-    height: 1800px;
-  }
-
-  .projects-content {
-    margin: 20px 0px !important;
-    width: 300px !important;
-  }
-}
 
 .home-container {
   width: 100vw;
@@ -1038,4 +877,280 @@ $main-vue: #00FF7F;
 }
 
 //===== SKILLS END =====
+
+.projects-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .projects-center {
+    width: 1700px;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+    h1 {
+      color: #FFF;
+      text-shadow: -4px -3px 0px #0F0;
+      font-family: Fira Code;
+      font-size: 2.5rem;
+      font-weight: 600;
+      left: 50px;
+      top: 50px;
+      position: absolute;
+    }
+
+    .projects-line {
+      top: 130px;
+      position: absolute;
+      width: 500px;
+      left: 30px;
+      height: 5px;
+      background-color: $main-vue;
+    }
+
+    .projects-left {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 40%;
+      height: 100%;
+
+
+      .svg-projects {
+        width: 130%;
+      }
+    }
+
+    .projects-right {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .projects-row {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .projects-content {
+          width: 35%;
+          height: 250px;
+          border: 3px solid #00FF7F;
+          margin: 0 30px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all .3s;
+          position: relative;
+
+          h3 {
+            color: $main-vue;
+            font-family: Open Sans;
+            transition: all .5s;
+          }
+
+          &:hover h3 {
+            letter-spacing: 3px;
+          }
+
+
+          &:hover {
+            scale: 1.2;
+          }
+
+          &:hover h2 {
+            top: 40px;
+            opacity: 1;
+          }
+
+          &:hover p {
+            bottom: 40px;
+            opacity: 1;
+          }
+
+          h2 {
+            top: 10px;
+            left: 30px;
+            position: absolute;
+            font-family: Open sans;
+            color: $main-vue;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          p {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            color: #fff;
+            font-family: Open sans;
+            width: 80%;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          .project-img {
+            width: 100%;
+            height: 100%;
+            transition: all .4s;
+
+            &:hover {
+              opacity: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1110px) {
+
+  .projects-center {
+    h1 {
+      top: -200px !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+  }
+
+  .projects-line {
+    top: -130px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .projects-container {
+    margin-top: 300px;
+  }
+
+  .projects-left {
+    display: none !important;
+  }
+
+  .projects-right {
+    width: 100% !important;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .projects-row {
+    flex-direction: column;
+    margin: 1px;
+    height: 700px !important;
+  }
+
+  .projects-container {
+    height: 1800px;
+  }
+
+  .projects-content {
+    margin: 20px 0px !important;
+    width: 300px !important;
+  }
+}
+
+//===== PROJECTS END =====
+
+.contact-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  .svgBgFooter {
+    position: absolute;
+    bottom: -100px;
+    z-index: -1;
+  }
+
+  .contact-center {
+    width: 1500px;
+    height: 100%;
+    display: flex;
+
+    .contact-left {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h2 {
+        font-family: Open sans;
+        font-size: 2rem;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      h3 {
+        font-family: Open sans;
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      .contact-btn {
+        margin-top: 30px;
+        width: 250px;
+        height: 60px;
+        border: 1px solid $main-vue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          box-shadow: inset 0px 0px 15px 1px $main-vue;
+        }
+      }
+
+      .contact-git {
+        width: 35px;
+
+      }
+
+      .contact-row {
+        width: 500px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+
+        .contact-icon {
+          width: 50px;
+          margin: 0px 20px;
+          transition: all .2s;
+
+          &:hover {
+            scale: 1.2;
+          }
+        }
+      }
+    }
+
+    .contact-right {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+}
+
 </style>
