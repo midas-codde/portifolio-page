@@ -18,12 +18,12 @@ import svgProjects from './components/vue-design/svgProjects.vue'
         <a class="btn-nav" href="#about">About me</a>
         <a class="btn-nav" href="#skills">Skills</a>
         <a class="btn-nav" href="#projects">Projects</a>
-        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/linkedin.png" alt=""
-            class="i-linkedin"></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="i-gmail" src="./assets/icons/gmail.png"
-            alt=""></a>
-        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/github.png" alt=""
-            class="i-github"></a>
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+            src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="i-gmail"
+            src="./assets/icons/gmail.png" alt=""></a>
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img
+            src="./assets/icons/github.png" alt="" class="i-github"></a>
       </div>
       <div class="home-content">
         <div class="container-typed">
@@ -139,9 +139,9 @@ import svgProjects from './components/vue-design/svgProjects.vue'
   </div>
   <div id="projects" class="projects-container">
     <div class="projects-center">
+      <h1>Projetos</h1>
+      <div class="projects-line"></div>
       <div class="projects-left">
-        <h1>Projetos</h1>
-        <div class="projects-line"></div>
         <svgProjects class="svg-projects" />
       </div>
       <div class="projects-right">
@@ -197,6 +197,26 @@ $main-vue: #00FF7F;
     display: flex;
     position: relative;
 
+    h1 {
+      color: #FFF;
+      text-shadow: -4px -3px 0px #0F0;
+      font-family: Fira Code;
+      font-size: 2.5rem;
+      font-weight: 600;
+      left: 50px;
+      top: 50px;
+      position: absolute;
+    }
+
+    .projects-line {
+      top: 130px;
+      position: absolute;
+      width: 500px;
+      left: 30px;
+      height: 5px;
+      background-color: $main-vue;
+    }
+
     .projects-left {
       display: flex;
       position: relative;
@@ -204,24 +224,6 @@ $main-vue: #00FF7F;
       width: 40%;
       height: 100%;
 
-      h1 {
-        color: #FFF;
-        text-shadow: -4px -3px 0px #0F0;
-        font-family: Fira Code;
-        font-size: 2.5rem;
-        font-weight: 600;
-        left: 50px;
-        top: 50px;
-        position: absolute;
-      }
-
-      .projects-line {
-        top: 130px;
-        position: absolute;
-        width: 100%;
-        height: 5px;
-        background-color: $main-vue;
-      }
 
       .svg-projects {
         width: 130%;
@@ -259,6 +261,11 @@ $main-vue: #00FF7F;
           h3 {
             color: $main-vue;
             font-family: Open Sans;
+            transition: all .5s;
+          }
+
+          &:hover h3 {
+            letter-spacing: 3px;
           }
 
 
@@ -270,7 +277,7 @@ $main-vue: #00FF7F;
             top: 40px;
             opacity: 1;
           }
-          
+
           &:hover p {
             bottom: 40px;
             opacity: 1;
@@ -311,6 +318,53 @@ $main-vue: #00FF7F;
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1110px) {
+
+  .projects-center {
+    h1 {
+      top: -200px !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+  }
+
+  .projects-line {
+    top: -130px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .projects-container {
+    margin-top: 300px;
+  }
+
+  .projects-left {
+    display: none !important;
+  }
+
+  .projects-right {
+    width: 100% !important;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .projects-row {
+    flex-direction: column;
+    margin: 1px;
+    height: 700px !important;
+  }
+
+  .projects-container {
+    height: 1800px;
+  }
+
+  .projects-content {
+    margin: 20px 0px !important;
+    width: 300px !important;
   }
 }
 
