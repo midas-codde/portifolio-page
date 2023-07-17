@@ -13,3 +13,7 @@ body {
   background-color: $color-secondary;
   overflow-x: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}

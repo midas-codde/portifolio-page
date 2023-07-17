@@ -9,20 +9,20 @@ import svgProjects from './components/vue-design/svgProjects.vue'
 </script>
 
 <template>
-  <div class="home-container">
+  <div id="home" class="home-container">
     <svgBg class="background" />
     <div class="home-center">
       <div class="nav-bar">
         <img class="logo" src="./assets/icons/midas-logoBG-white.png" alt="">
-        <a class="btn-nav" href="#">Home</a>
-        <a class="btn-nav" href="#">About me</a>
-        <a class="btn-nav" href="#">Skills</a>
-        <a class="btn-nav" href="#">Projects</a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/linkedin.png" alt=""
+        <a class="btn-nav" href="#home">Home</a>
+        <a class="btn-nav" href="#about">About me</a>
+        <a class="btn-nav" href="#skills">Skills</a>
+        <a class="btn-nav" href="#projects">Projects</a>
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/linkedin.png" alt=""
             class="i-linkedin"></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"><img class="i-gmail" src="./assets/icons/gmail.png"
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="i-gmail" src="./assets/icons/gmail.png"
             alt=""></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/github.png" alt=""
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/github.png" alt=""
             class="i-github"></a>
       </div>
       <div class="home-content">
@@ -36,14 +36,16 @@ import svgProjects from './components/vue-design/svgProjects.vue'
           Estudo um pouco de Back-end com a finalidade de um dia
           me tornar um Programador FullStack.</p>
         <div class="btns-row">
-          <div class="btn-left">Saiba mais</div>
+          <a href="https://github.com/RichardMidas" target="_blank">
+            <div class="btn-left">Saiba mais</div>
+          </a>
           <div class="btn-right">Fale comigo!</div>
         </div>
         <svgHome class="svg-home" />
       </div>
     </div>
   </div>
-  <div class="about-container">
+  <div id="about" class="about-container">
     <div class="about-center">
       <svgCode class="svg-code" />
       <div class="about-line"></div>
@@ -62,7 +64,7 @@ import svgProjects from './components/vue-design/svgProjects.vue'
       </div>
     </div>
   </div>
-  <div class="skills-container">
+  <div id="skills" class="skills-container">
     <div class="skills-center">
       <div class="skills-text">
         <div class="skills-line"></div>
@@ -135,7 +137,7 @@ import svgProjects from './components/vue-design/svgProjects.vue'
       </div>
     </div>
   </div>
-  <div class="projects-container">
+  <div id="projects" class="projects-container">
     <div class="projects-center">
       <div class="projects-left">
         <h1>Projetos</h1>
@@ -398,6 +400,11 @@ $main-vue: #00FF7F;
         flex-direction: row;
         position: absolute;
         bottom: 0;
+
+        a {
+          text-decoration: none;
+        }
+
       }
 
       .btn-left {
@@ -415,6 +422,7 @@ $main-vue: #00FF7F;
         cursor: pointer;
         transition: all 0.2s;
         margin-right: 40px;
+
 
         &:hover {
           box-shadow: inset 0px 0px 15px 1px $main-vue;
