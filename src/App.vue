@@ -39,7 +39,9 @@ import svgContact from './components/vue-design/svgContact.vue'
           <a href="https://github.com/RichardMidas" target="_blank">
             <div class="btn-left">Saiba mais</div>
           </a>
-          <div class="btn-right">Fale comigo!</div>
+          <a href="#contact">
+            <div class="btn-right">Fale comigo!</div>
+          </a>
         </div>
         <svgHome class="svg-home" />
       </div>
@@ -146,16 +148,20 @@ import svgContact from './components/vue-design/svgContact.vue'
       </div>
       <div class="projects-right">
         <div class="projects-row">
-          <div class="projects-content">
-            <img class="project-img" src="../src/imgs/project1.png" alt="">
-            <h2>Jogo da Forca</h2>
-            <p>Jogo da forca desenvolvido em JavaScript com interação de cores definidas.</p>
-          </div>
-          <div class="projects-content">
-            <img class="project-img" src="../src/imgs/project2.png" alt="">
-            <h2>Company Plataform</h2>
-            <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa.</p>
-          </div>
+          <a href="https://github.com/RichardMidas/Jogo-da-forca" target="_blank">
+            <div class="projects-content-rl">
+              <img class="project-img p" src="../src/imgs/project1.png" alt="">
+              <h2>Jogo da Forca</h2>
+              <p>Jogo da forca desenvolvido em JavaScript com interação de cores definidas.</p>
+            </div>
+          </a>
+          <a href="https://github.com/RichardMidas/company-plataform" target="_blank">
+            <div class="projects-content-rl">
+              <img class="project-img p" src="../src/imgs/project2.png" alt="">
+              <h2>Company Plataform</h2>
+              <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa.</p>
+            </div>
+          </a>
         </div>
         <div class="projects-row">
           <div class="projects-content">
@@ -176,18 +182,18 @@ import svgContact from './components/vue-design/svgContact.vue'
       </div>
     </div>
   </div>
-  <div class="contact-container">
+  <div id="contact" class="contact-container">
     <svgBgFooter class="svgBgFooter" />
     <div class="contact-center">
       <div class="contact-left">
         <h2>Tem interesse no meu trabalho?</h2>
         <h3>Entre em contato comigo :&#41</h3>
         <div class="contact-row">
-          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
               src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
-          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
               src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
-          <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
               src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
         </div>
         <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
@@ -195,7 +201,7 @@ import svgContact from './components/vue-design/svgContact.vue'
         </a>
       </div>
       <div class="contact-right">
-        <svgContact class="svgContact"/>
+        <svgContact class="svgContact" />
       </div>
     </div>
   </div>
@@ -938,6 +944,83 @@ $main-vue: #00FF7F;
         align-items: center;
         justify-content: center;
 
+        a {
+          display: flex;
+          margin: 0px 30px;
+          width: 35%;
+          height: 250px;
+        }
+
+
+        .projects-content-rl {
+          width: 100%;
+          height: 250px;
+          border: 3px solid #00FF7F;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all .3s;
+          position: relative;
+
+          h3 {
+            color: $main-vue;
+            font-family: Open Sans;
+            transition: all .5s;
+          }
+
+          &:hover h3 {
+            letter-spacing: 3px;
+          }
+
+
+          &:hover {
+            scale: 1.2;
+          }
+
+          &:hover h2 {
+            top: 40px;
+            opacity: 1;
+          }
+
+          &:hover p {
+            bottom: 40px;
+            opacity: 1;
+          }
+
+          h2 {
+            top: 10px;
+            left: 30px;
+            position: absolute;
+            font-family: Open sans;
+            color: $main-vue;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          p {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            color: #fff;
+            font-family: Open sans;
+            width: 80%;
+            opacity: 0;
+            transition: all .5s;
+            pointer-events: none;
+          }
+
+          .project-img {
+            width: 100%;
+            height: 100%;
+            transition: all .4s;
+
+            &:hover {
+              opacity: 5%;
+            }
+          }
+        }
 
         .projects-content {
           width: 35%;
@@ -1009,6 +1092,7 @@ $main-vue: #00FF7F;
             }
           }
         }
+        
       }
     }
   }
@@ -1069,6 +1153,7 @@ $main-vue: #00FF7F;
   position: relative;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 
   .svgBgFooter {
     position: absolute;
@@ -1153,48 +1238,52 @@ $main-vue: #00FF7F;
       }
     }
   }
-
-  @media screen and (max-width: 1110px) {
-    .contact-center {
-      flex-direction: column;
-      height: 1000px !important;
-
-      .contact-left {
-        width: 100%;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-
-      .contact-right {
-        width: 100%;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .contact-left {
-      h2 {
-        font-size: 1.3rem !important;
-      }
-
-      h3 {
-        font-size: 1.1rem !important;
-      }
-    }
-    .svgBgFooter {
-      bottom: -150px;
-    }
-    .contact-right {
-      position: relative;
-      .svgContact {
-        width: 300px !important;
-        position: absolute;
-        top: -100px;
-      }
-    }
-  }
-
 }
+
+@media screen and (max-width: 1110px) {
+  .contact-center {
+    flex-direction: column;
+    height: 1000px !important;
+
+    .contact-left {
+      width: 100%;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .contact-right {
+      width: 100%;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-left {
+    h2 {
+      font-size: 1.3rem !important;
+    }
+
+    h3 {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  .svgBgFooter {
+    bottom: -150px;
+  }
+
+  .contact-right {
+    position: relative;
+
+    .svgContact {
+      width: 300px !important;
+      position: absolute;
+      top: -100px;
+    }
+  }
+}
+
+//===== CONTACT END =====
 </style>
