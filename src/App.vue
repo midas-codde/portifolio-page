@@ -190,12 +190,12 @@ import svgContact from './components/vue-design/svgContact.vue'
           <a href="http://" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
               src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
         </div>
-        <a class="contact-btn" href="https://github.com/RichardMidas">
+        <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
           <img class="contact-git" src="../src/assets/icons/github.png" alt="">
         </a>
       </div>
       <div class="contact-right">
-        <svgContact />
+        <svgContact class="svgContact"/>
       </div>
     </div>
   </div>
@@ -1069,7 +1069,6 @@ $main-vue: #00FF7F;
   position: relative;
   display: flex;
   justify-content: center;
-  overflow: hidden;
 
   .svgBgFooter {
     position: absolute;
@@ -1148,9 +1147,54 @@ $main-vue: #00FF7F;
       width: 50%;
       display: flex;
       align-items: center;
+
+      .svgContact {
+        width: 500px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1110px) {
+    .contact-center {
+      flex-direction: column;
+      height: 1000px !important;
+
+      .contact-left {
+        width: 100%;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .contact-right {
+        width: 100%;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .contact-left {
+      h2 {
+        font-size: 1.3rem !important;
+      }
+
+      h3 {
+        font-size: 1.1rem !important;
+      }
+    }
+    .svgBgFooter {
+      bottom: -150px;
+    }
+    .contact-right {
+      position: relative;
+      .svgContact {
+        width: 300px !important;
+        position: absolute;
+        top: -100px;
+      }
     }
   }
 
 }
-
 </style>
