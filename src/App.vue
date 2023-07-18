@@ -6,9 +6,15 @@ import svgHome from './components/vue-design/svgHome.vue'
 import svgPc from './components/vue-design/svgPc.vue';
 import svgProjects from './components/vue-design/svgProjects.vue'
 import svgContact from './components/vue-design/svgContact.vue'
+
+  const btnTop = () =>{
+    window.scrollTo(0,0)
+  }
+
 </script>
 
 <template>
+  <div v-on:click="btnTop" class="btn-top"><img src="../src/imgs/up-arrow.png" alt=""></div>
   <div id="home" class="home-container">
     <svgBg class="background" />
     <div class="home-center">
@@ -159,7 +165,7 @@ import svgContact from './components/vue-design/svgContact.vue'
             <div class="projects-content-rl">
               <img class="project-img p" src="../src/imgs/project2.png" alt="">
               <h2>Company Plataform</h2>
-              <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa.</p>
+              <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa. <br> (Em desenvolvimento)</p>
             </div>
           </a>
         </div>
@@ -191,10 +197,10 @@ import svgContact from './components/vue-design/svgContact.vue'
         <div class="contact-row">
           <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
               src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
-          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
-              src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
-          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
-              src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+              class="contact-icon" src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+              class="contact-icon" src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
         </div>
         <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
           <img class="contact-git" src="../src/assets/icons/github.png" alt="">
@@ -203,6 +209,7 @@ import svgContact from './components/vue-design/svgContact.vue'
       <div class="contact-right">
         <svgContact class="svgContact" />
       </div>
+      <p>Site desenvolvido por <a href="https://github.com/RichardMidas" target="_blank">Midas</a></p>
     </div>
   </div>
 </template>
@@ -212,6 +219,33 @@ import svgContact from './components/vue-design/svgContact.vue'
 $color-primary: #212428;
 $color-secondary: #2B3037;
 $main-vue: #00FF7F;
+$main-react: #25BEEF;
+
+.btn-top {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $main-vue;
+  cursor: pointer;
+  position: fixed;
+  opacity: 50%;
+  z-index: 5;
+  right: 50px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+
+  &:hover {
+    opacity: 100%;
+  }
+
+  img {
+    width: 20px;
+  }
+
+}
 
 .home-container {
   width: 100vw;
@@ -1092,7 +1126,7 @@ $main-vue: #00FF7F;
             }
           }
         }
-        
+
       }
     }
   }
@@ -1133,6 +1167,11 @@ $main-vue: #00FF7F;
     flex-direction: column;
     margin: 1px;
     height: 700px !important;
+
+    a {
+      width: 300px !important;
+      margin: 20px 0px !important;
+    }
   }
 
   .projects-container {
@@ -1140,6 +1179,12 @@ $main-vue: #00FF7F;
   }
 
   .projects-content {
+    margin: 20px 0px !important;
+    width: 300px !important;
+
+  }
+
+  .projects-content-rl {
     margin: 20px 0px !important;
     width: 300px !important;
   }
@@ -1165,6 +1210,20 @@ $main-vue: #00FF7F;
     width: 1500px;
     height: 100%;
     display: flex;
+
+    p {
+      font-family: Open sans;
+      color: #FFF;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%);
+
+      a {
+        color: $main-vue;
+        text-decoration: none;
+      }
+    }
 
     .contact-left {
       height: 100%;
@@ -1196,6 +1255,7 @@ $main-vue: #00FF7F;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all .5s;
 
         &:hover {
           box-shadow: inset 0px 0px 15px 1px $main-vue;
