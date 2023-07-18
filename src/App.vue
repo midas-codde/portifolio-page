@@ -1246,13 +1246,13 @@ $main-vue: #00FF7F;
     height: 1000px !important;
 
     .contact-left {
-      width: 100%;
+      width: 100% !important;
       align-items: center !important;
       justify-content: center !important;
     }
 
     .contact-right {
-      width: 100%;
+      width: 100% !important;
       align-items: center !important;
       justify-content: center !important;
     }
