@@ -20,14 +20,14 @@ const btnTop = () => {
     <svgBg class="background" />
     <div class="home-center">
       <div data-aos="fade-down" data-aos-duration="1000" class="nav-bar">
-        <div class="input-design">
+        <!-- <div class="input-design">
           <p class="text-mode">Design</p>
           <div class="switch-check">
             <input type="checkbox" name="" id="toggleBtn">
             <label for="toggleBtn" class="toggle"></label>
           </div>
           <p class="text-design">Vue</p>
-        </div>
+        </div> -->
         <img class="logo" src="./assets/icons/midas-logoBG-white.png" alt="">
         <a class="btn-nav" href="#home">Home</a>
         <a class="btn-nav" href="#about">About me</a>
