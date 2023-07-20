@@ -75,7 +75,7 @@ const btnTop = () => {
           <h2>Oi, <br> Me chamo <span>Richard</span>.</h2>
           <p>Tenho 20 anos e atualmente moro no Rio de Janeiro. Sempre gostei de games e tecnologia e foi através dos
             jogos que tive interesse na área de programação. Hoje sigo minha carreira dominando as tecnologias ReactJs e
-            VueJs. Estudo um pouco de PHP para ter conhecimentos sólidos em back-end pra um dia me tornar um Dev
+            VueJs. Estudo um pouco de PHP para ter conhecimentos sólidos em back-end pra um dia me tornar um Desenvolvedor
             FullStack. ☕</p>
         </div>
       </div>
