@@ -6,11 +6,12 @@ import svgHome from './components/vue-design/svgHome.vue'
 import svgPc from './components/vue-design/svgPc.vue';
 import svgProjects from './components/vue-design/svgProjects.vue'
 import svgContact from './components/vue-design/svgContact.vue'
+import AOS from 'aos'
+AOS.init();
 
-  const btnTop = () =>{
-    window.scrollTo(0,0)
-  }
-
+const btnTop = () => {
+  window.scrollTo(0, 0)
+}
 </script>
 
 <template>
@@ -18,7 +19,15 @@ import svgContact from './components/vue-design/svgContact.vue'
   <div id="home" class="home-container">
     <svgBg class="background" />
     <div class="home-center">
-      <div class="nav-bar">
+      <div data-aos="fade-down" data-aos-duration="1000" class="nav-bar">
+        <div class="input-design">
+          <p class="text-mode">Design</p>
+          <div class="switch-check">
+            <input type="checkbox" name="" id="toggleBtn">
+            <label for="toggleBtn" class="toggle"></label>
+          </div>
+          <p class="text-design">Vue</p>
+        </div>
         <img class="logo" src="./assets/icons/midas-logoBG-white.png" alt="">
         <a class="btn-nav" href="#home">Home</a>
         <a class="btn-nav" href="#about">About me</a>
@@ -31,7 +40,7 @@ import svgContact from './components/vue-design/svgContact.vue'
         <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img
             src="./assets/icons/github.png" alt="" class="i-github"></a>
       </div>
-      <div class="home-content">
+      <div data-aos="fade-up" data-aos-duration="1000" class="home-content">
         <div class="container-typed">
           <p class="text-typed">Hellow world!</p>
         </div>
@@ -55,14 +64,14 @@ import svgContact from './components/vue-design/svgContact.vue'
   </div>
   <div id="about" class="about-container">
     <div class="about-center">
-      <svgCode class="svg-code" />
-      <div class="about-line"></div>
-      <h1>Sobre mim</h1>
+      <svgCode data-aos="fade-left" data-aos-duration="1000" class="svg-code" />
+      <div data-aos="fade-right" data-aos-duration="1000" class="about-line"></div>
+      <h1 data-aos="fade-right" data-aos-duration="1000">Sobre mim</h1>
       <div class="about-left">
-        <svgPc class="svg-pc" />
+        <svgPc data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
       </div>
-      <div class="about-right">
-        <div class="about-column">
+      <div data-aos="fade-left" data-aos-duration="1000" class="about-right">
+        <div data-aos="fade-left" data-aos-duration="1000" class="about-column">
           <h2>Oi, <br> Me chamo <span>Richard</span>.</h2>
           <p>Tenho 20 anos e atualmente moro no Rio de Janeiro. Sempre gostei de games e tecnologia e foi através dos
             jogos que tive interesse na área de programação. Hoje sigo minha carreira dominando as tecnologias ReactJs e
@@ -75,12 +84,12 @@ import svgContact from './components/vue-design/svgContact.vue'
   <div id="skills" class="skills-container">
     <div class="skills-center">
       <div class="skills-text">
-        <div class="skills-line"></div>
-        <h1>Conhecimentos</h1>
-        <h2>Tecnologias que uso no meu dia a dia</h2>
-        <div class="skills-line"></div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills-line"></div>
+        <h1 data-aos="fade-down" data-aos-duration="1000">Conhecimentos</h1>
+        <h2 data-aos="fade-up" data-aos-duration="1000">Tecnologias que uso no meu dia a dia</h2>
+        <div data-aos="fade-left" data-aos-duration="1000" class="skills-line"></div>
       </div>
-      <div class="skills-content">
+      <div data-aos="fade-up" data-aos-duration="1000" class="skills-content">
         <div class="skills-flex">
           <div class="skills-itens">
             <div class="itens-icon">
@@ -147,13 +156,13 @@ import svgContact from './components/vue-design/svgContact.vue'
   </div>
   <div id="projects" class="projects-container">
     <div class="projects-center">
-      <h1>Projetos</h1>
-      <div class="projects-line"></div>
-      <div class="projects-left">
+      <h1 data-aos="fade-right" data-aos-duration="600">Projetos</h1>
+      <div data-aos="fade-right" data-aos-duration="800" class="projects-line"></div>
+      <div data-aos="fade-right" data-aos-duration="1000" class="projects-left">
         <svgProjects class="svg-projects" />
       </div>
       <div class="projects-right">
-        <div class="projects-row">
+        <div data-aos="fade-left" data-aos-duration="500" class="projects-row">
           <a href="https://github.com/RichardMidas/Jogo-da-forca" target="_blank">
             <div class="projects-content-rl">
               <img class="project-img p" src="../src/imgs/project1.png" alt="">
@@ -169,7 +178,7 @@ import svgContact from './components/vue-design/svgContact.vue'
             </div>
           </a>
         </div>
-        <div class="projects-row">
+        <div data-aos="fade-right" data-aos-duration="1000" class="projects-row">
           <div class="projects-content">
             <h3>Em breve</h3>
           </div>
@@ -177,7 +186,7 @@ import svgContact from './components/vue-design/svgContact.vue'
             <h3>Em breve</h3>
           </div>
         </div>
-        <div class="projects-row">
+        <div data-aos="fade-left" data-aos-duration="1500" class="projects-row">
           <div class="projects-content">
             <h3>Em breve</h3>
           </div>
@@ -191,7 +200,7 @@ import svgContact from './components/vue-design/svgContact.vue'
   <div id="contact" class="contact-container">
     <svgBgFooter class="svgBgFooter" />
     <div class="contact-center">
-      <div class="contact-left">
+      <div data-aos="zoom-out-right" data-aos-duration="1500" class="contact-left">
         <h2>Tem interesse no meu trabalho?</h2>
         <h3>Entre em contato comigo :&#41</h3>
         <div class="contact-row">
@@ -206,7 +215,7 @@ import svgContact from './components/vue-design/svgContact.vue'
           <img class="contact-git" src="../src/assets/icons/github.png" alt="">
         </a>
       </div>
-      <div class="contact-right">
+      <div data-aos="zoom-out-left" data-aos-duration="1500" class="contact-right">
         <svgContact class="svgContact" />
       </div>
       <p>Site desenvolvido por <a href="https://github.com/RichardMidas" target="_blank">Midas</a></p>
@@ -402,10 +411,82 @@ $main-react: #25BEEF;
       justify-content: center;
       position: relative;
 
+      .input-design {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 200px;
+        align-items: center;
+        width: 50px;
+        height: 60px;
+      }
+
+      .text-mode {
+        font-family: Open sans;
+        font-size: .8rem;
+        position: absolute;
+        top: 0;
+      }
+
+      .text-design {
+        font-family: Open sans;
+        font-size: .8rem;
+        position: absolute;
+        bottom: 0;
+        font-weight: 700;
+        color: $main-vue;
+      }
+
+      .switch-check {
+        z-index: 1;
+        width: 35px;
+        height: 15px;
+        border-radius: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $main-vue;
+
+        input {
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          appearance: none;
+          border-radius: 30px;
+          transition: all .5s;
+          cursor: pointer;
+
+          &:checked {
+            background-color: $main-react;
+          }
+
+          &:checked+.toggle {
+            left: 20px;
+
+          }
+        }
+
+        .toggle {
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          border-radius: 50%;
+          z-index: 2;
+          left: 0;
+          top: 0;
+          background-color: #fff;
+          transition: cubic-bezier(0.895, 0.07, 0.685, 0.68);
+          transition: .5s;
+          cursor: pointer;
+        }
+      }
 
       .logo {
         position: absolute;
         left: -20px;
+        pointer-events: none;
       }
 
       .btn-nav {
