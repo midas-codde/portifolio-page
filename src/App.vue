@@ -1,33 +1,78 @@
 <script setup lang="ts">
-import svgBg from './components/svg/svgBg.vue'
-import svgCode from './components/vue-design/svgCode.vue';
+import { ref, onMounted, onBeforeMount } from 'vue';
 import svgBgFooter from './components/svg/svgBgFooter.vue'
+import svgBg from './components/svg/svgBg.vue'
+import svgCode from './components/vue-design/svgCode.vue'
+import svgCodeReact from './components/react-design/svgCodeReact.vue'
 import svgHome from './components/vue-design/svgHome.vue'
-import svgPc from './components/vue-design/svgPc.vue';
+import svgHomeReact from './components/react-design/svgHomeReact.vue'
+import svgPc from './components/vue-design/svgPc.vue'
+import svgPcReact from './components/react-design/svgPcReact.vue'
 import svgProjects from './components/vue-design/svgProjects.vue'
+import svgProjectsReact from './components/react-design/svgProjectsReact.vue'
 import svgContact from './components/vue-design/svgContact.vue'
+import svgContactReact from './components/react-design/svgContactReact.vue'
 import AOS from 'aos'
+
 AOS.init();
+
+const showButton = ref(false)
+
+const checkScroll = () => {
+  if (window.scrollY > 300) {
+    showButton.value = true
+  } else {
+    showButton.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("scroll", checkScroll)
+})
+
+onBeforeMount(() => {
+  window.removeEventListener("scroll", checkScroll)
+})
+
+
 
 const btnTop = () => {
   window.scrollTo(0, 0)
 }
+
+const nameDesign = ref('Vue')
+const mainColor = ref('#00FF7F')
+const reactMode = ref(false)
+
+
+const toggle = (el: HTMLInputElement) => {
+  if (el.checked == true) {
+    reactMode.value = true
+    nameDesign.value = "React"
+    mainColor.value = "#25BEEF"
+  } else {
+    reactMode.value = false
+    nameDesign.value = "Vue"
+    mainColor.value = "#00FF7F"
+  }
+}
+
 </script>
 
 <template>
-  <div v-on:click="btnTop" class="btn-top"><img src="../src/imgs/up-arrow.png" alt=""></div>
+  <div v-if="showButton" v-on:click="btnTop" class="btn-top"><img src="../src/imgs/up-arrow.png" alt=""></div>
   <div id="home" class="home-container">
     <svgBg class="background" />
     <div class="home-center">
       <div data-aos="fade-down" data-aos-duration="1000" class="nav-bar">
-        <!-- <div class="input-design">
+        <div class="input-design">
           <p class="text-mode">Design</p>
           <div class="switch-check">
-            <input type="checkbox" name="" id="toggleBtn">
+            <input @input="(toggle($event.target as HTMLInputElement))" type="checkbox" name="" id="toggleBtn">
             <label for="toggleBtn" class="toggle"></label>
           </div>
-          <p class="text-design">Vue</p>
-        </div> -->
+          <p class="text-design">{{ nameDesign }}</p>
+        </div>
         <img class="logo" src="./assets/icons/midas-logoBG-white.png" alt="">
         <a class="btn-nav" href="#home">Home</a>
         <a class="btn-nav" href="#about">About me</a>
@@ -58,17 +103,20 @@ const btnTop = () => {
             <div class="btn-right">Fale comigo!</div>
           </a>
         </div>
-        <svgHome class="svg-home" />
+        <svgHome v-if="!reactMode" class="svg-home" />
+        <svgHomeReact v-else class="svg-home" />
       </div>
     </div>
   </div>
   <div id="about" class="about-container">
     <div class="about-center">
-      <svgCode data-aos="fade-left" data-aos-duration="1000" class="svg-code" />
+      <svgCode v-if="!reactMode" data-aos="fade-left" data-aos-duration="1000" class="svg-code" />
+      <svgCodeReact v-else data-aos="fade-left" data-aos-duration="1000" class="svg-code" />
       <div data-aos="fade-right" data-aos-duration="1000" class="about-line"></div>
       <h1 data-aos="fade-right" data-aos-duration="1000">Sobre mim</h1>
       <div class="about-left">
-        <svgPc data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
+        <svgPc v-if="!reactMode" data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
+        <svgPcReact v-else data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
       </div>
       <div data-aos="fade-left" data-aos-duration="1000" class="about-right">
         <div data-aos="fade-left" data-aos-duration="1000" class="about-column">
@@ -159,7 +207,8 @@ const btnTop = () => {
       <h1 data-aos="fade-right" data-aos-duration="600">Projetos</h1>
       <div data-aos="fade-right" data-aos-duration="800" class="projects-line"></div>
       <div data-aos="fade-right" data-aos-duration="1000" class="projects-left">
-        <svgProjects class="svg-projects" />
+        <svgProjects v-if="!reactMode" class="svg-projects" />
+        <svgProjectsReact v-else class="svg-projects" />
       </div>
       <div class="projects-right">
         <div data-aos="fade-left" data-aos-duration="500" class="projects-row">
@@ -198,7 +247,8 @@ const btnTop = () => {
     </div>
   </div>
   <div id="contact" class="contact-container">
-    <svgBgFooter class="svgBgFooter" />
+    <svgBgFooter v-if="!reactMode" class="svgBgFooter" />
+    <svgBgFooter v-else class="svgBgFooter" />
     <div class="contact-center">
       <div data-aos="zoom-out-right" data-aos-duration="1500" class="contact-left">
         <h2>Tem interesse no meu trabalho?</h2>
@@ -216,7 +266,8 @@ const btnTop = () => {
         </a>
       </div>
       <div data-aos="zoom-out-left" data-aos-duration="1500" class="contact-right">
-        <svgContact class="svgContact" />
+        <svgContact v-if="!reactMode" class="svgContact" />
+        <svgContactReact v-else class="svgContact" />
       </div>
       <p>Site desenvolvido por <a href="https://github.com/RichardMidas" target="_blank">Midas</a></p>
     </div>
@@ -234,7 +285,7 @@ $main-react: #25BEEF;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: $main-vue;
+  background-color: v-bind(mainColor);
   cursor: pointer;
   position: fixed;
   opacity: 50%;
@@ -295,7 +346,7 @@ $main-react: #25BEEF;
         width: 100%;
         font-family: Fira Code;
         font-weight: 300;
-        border-right: 3px solid $main-vue;
+        border-right: 3px solid v-bind(mainColor);
         white-space: nowrap;
         overflow: hidden;
         animation: typing 2s steps(18), cursor .4s step-end infinite alternate;
@@ -314,7 +365,7 @@ $main-react: #25BEEF;
       }
 
       span {
-        color: $main-vue;
+        color: v-bind(mainColor);
       }
 
       h1 {
@@ -352,9 +403,9 @@ $main-react: #25BEEF;
       .btn-left {
         width: 167px;
         height: 45px;
-        border: 1px solid $main-vue;
+        border: 1px solid v-bind(mainColor);
         background-color: $color-primary;
-        color: $main-vue;
+        color: v-bind(mainColor);
         font-family: Open Sans;
         font-size: 20px;
         font-weight: 300;
@@ -367,7 +418,7 @@ $main-react: #25BEEF;
 
 
         &:hover {
-          box-shadow: inset 0px 0px 15px 1px $main-vue;
+          box-shadow: inset 0px 0px 15px 1px v-bind(mainColor);
         }
       }
 
@@ -376,7 +427,7 @@ $main-react: #25BEEF;
         width: 167px;
         height: 45px;
         flex-shrink: 0;
-        background-color: $main-vue;
+        background-color: v-bind(mainColor);
         color: #FFF;
         font-family: Open Sans;
         font-size: 20px;
@@ -390,7 +441,7 @@ $main-react: #25BEEF;
         transition: all 0.2s;
 
         &:hover {
-          box-shadow: 0px 0px 15px 1px $main-vue;
+          box-shadow: 0px 0px 15px 1px v-bind(mainColor);
         }
       }
 
@@ -434,7 +485,7 @@ $main-react: #25BEEF;
         position: absolute;
         bottom: 0;
         font-weight: 700;
-        color: $main-vue;
+        color: v-bind(mainColor);
       }
 
       .switch-check {
@@ -446,7 +497,7 @@ $main-react: #25BEEF;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: $main-vue;
+        background-color: v-bind(mainColor);
 
         input {
           z-index: 1;
@@ -501,7 +552,7 @@ $main-react: #25BEEF;
           content: " ";
           width: 0px;
           height: 3px;
-          background-color: $main-vue;
+          background-color: v-bind(mainColor);
           bottom: -8px;
           left: 0;
           transition: all .2s;
@@ -647,7 +698,7 @@ $main-react: #25BEEF;
       width: 600px;
       height: 5px;
       border-radius: 5px 0 0 5px;
-      background-color: $main-vue;
+      background-color: v-bind(mainColor);
       right: 600px;
       top: 195px;
     }
@@ -680,7 +731,7 @@ $main-react: #25BEEF;
       }
 
       span {
-        color: $main-vue;
+        color: v-bind(mainColor);
       }
 
       p {
@@ -831,7 +882,7 @@ $main-react: #25BEEF;
       .skills-line {
         width: 500px;
         height: 5px;
-        background-color: $main-vue;
+        background-color: v-bind(mainColor);
         border-radius: 5px;
       }
     }
@@ -851,7 +902,7 @@ $main-react: #25BEEF;
       .skills-itens {
         width: 50%;
         height: 80%;
-        border: 1px solid #006B35;
+        border: 1px solid v-bind(mainColor);
         transition: .5s all;
         overflow-x: hidden;
 
@@ -886,8 +937,8 @@ $main-react: #25BEEF;
           }
 
           .itens-bg {
-            background: rgb(0, 255, 112);
-            background: linear-gradient(0deg, rgba(0, 255, 110, 0.596) 0%, rgba(22, 22, 22, 0) 20%);
+            background: v-bind(mainColor);
+            background: linear-gradient(0deg, v-bind(mainColor) 0%, rgba(22, 22, 22, 0) 20%);
             position: absolute;
             width: 100%;
             height: 100%;
@@ -1013,7 +1064,7 @@ $main-react: #25BEEF;
 
     h1 {
       color: #FFF;
-      text-shadow: -4px -3px 0px #0F0;
+      text-shadow: -4px -3px 0px v-bind(mainColor);
       font-family: Fira Code;
       font-size: 2.5rem;
       font-weight: 600;
@@ -1028,7 +1079,7 @@ $main-react: #25BEEF;
       width: 500px;
       left: 30px;
       height: 5px;
-      background-color: $main-vue;
+      background-color: v-bind(mainColor);
     }
 
     .projects-left {
@@ -1070,7 +1121,7 @@ $main-react: #25BEEF;
         .projects-content-rl {
           width: 100%;
           height: 250px;
-          border: 3px solid #00FF7F;
+          border: 3px solid v-bind(mainColor);
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -1079,7 +1130,7 @@ $main-react: #25BEEF;
           position: relative;
 
           h3 {
-            color: $main-vue;
+            color: v-bind(mainColor);
             font-family: Open Sans;
             transition: all .5s;
           }
@@ -1108,7 +1159,7 @@ $main-react: #25BEEF;
             left: 30px;
             position: absolute;
             font-family: Open sans;
-            color: $main-vue;
+            color: v-bind(mainColor);
             opacity: 0;
             transition: all .5s;
             pointer-events: none;
@@ -1140,7 +1191,7 @@ $main-react: #25BEEF;
         .projects-content {
           width: 35%;
           height: 250px;
-          border: 3px solid #00FF7F;
+          border: 3px solid v-bind(mainColor);
           margin: 0 30px;
           cursor: pointer;
           display: flex;
@@ -1150,7 +1201,7 @@ $main-react: #25BEEF;
           position: relative;
 
           h3 {
-            color: $main-vue;
+            color: v-bind(mainColor);
             font-family: Open Sans;
             transition: all .5s;
           }
@@ -1179,7 +1230,7 @@ $main-react: #25BEEF;
             left: 30px;
             position: absolute;
             font-family: Open sans;
-            color: $main-vue;
+            color: v-bind(mainColor);
             opacity: 0;
             transition: all .5s;
             pointer-events: none;
@@ -1301,7 +1352,7 @@ $main-react: #25BEEF;
       transform: translate(-50%);
 
       a {
-        color: $main-vue;
+        color: v-bind(mainColor);
         text-decoration: none;
       }
     }
@@ -1332,14 +1383,14 @@ $main-react: #25BEEF;
         margin-top: 30px;
         width: 250px;
         height: 60px;
-        border: 1px solid $main-vue;
+        border: 1px solid v-bind(mainColor);
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all .5s;
 
         &:hover {
-          box-shadow: inset 0px 0px 15px 1px $main-vue;
+          box-shadow: inset 0px 0px 15px 1px v-bind(mainColor);
         }
       }
 
