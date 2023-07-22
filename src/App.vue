@@ -78,12 +78,18 @@ const toggle = (el: HTMLInputElement) => {
         <a class="btn-nav" href="#about">About me</a>
         <a class="btn-nav" href="#skills">Skills</a>
         <a class="btn-nav" href="#projects">Projects</a>
-        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
             src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img class="i-gmail"
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+            src="./assets/icons/linkedinReact.png" alt="" class="i-linkedin"></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode" class="i-gmail"
             src="./assets/icons/gmail.png" alt=""></a>
-        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode" class="i-gmail"
+            src="./assets/icons/gmailReact.png" alt=""></a>
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
             src="./assets/icons/github.png" alt="" class="i-github"></a>
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+            src="./assets/icons/githubReact.png" alt="" class="i-github"></a>
       </div>
       <div data-aos="fade-up" data-aos-duration="1000" class="home-content">
         <div class="container-typed">
@@ -254,15 +260,22 @@ const toggle = (el: HTMLInputElement) => {
         <h2>Tem interesse no meu trabalho?</h2>
         <h3>Entre em contato comigo :&#41</h3>
         <div class="contact-row">
-          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img class="contact-icon"
+          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode" class="contact-icon"
               src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
-          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="reactMode" class="contact-icon"
+              src="../src/assets/icons/wppReact.png" alt="" srcset=""></a>
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
               class="contact-icon" src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
-          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+              class="contact-icon" src="../src/assets/icons/gmailReact.png" alt="" srcset=""></a>
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
               class="contact-icon" src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+              class="contact-icon" src="../src/assets/icons/linkedinReact.png" alt="" srcset=""></a>
         </div>
         <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
-          <img class="contact-git" src="../src/assets/icons/github.png" alt="">
+          <img v-if="!reactMode" class="contact-git" src="../src/assets/icons/github.png" alt="">
+          <img v-if="reactMode" class="contact-git" src="../src/assets/icons/githubReact.png" alt="">
         </a>
       </div>
       <div data-aos="zoom-out-left" data-aos-duration="1500" class="contact-right">
