@@ -34,8 +34,6 @@ onBeforeMount(() => {
   window.removeEventListener("scroll", checkScroll)
 })
 
-
-
 const btnTop = () => {
   window.scrollTo(0, 0)
 }
@@ -43,7 +41,6 @@ const btnTop = () => {
 const nameDesign = ref('Vue')
 const mainColor = ref('#00FF7F')
 const reactMode = ref(false)
-
 
 const toggle = (el: HTMLInputElement) => {
   if (el.checked == true) {
@@ -56,9 +53,7 @@ const toggle = (el: HTMLInputElement) => {
     mainColor.value = "#00FF7F"
   }
 }
-
 </script>
-
 <template>
   <div v-if="showButton" v-on:click="btnTop" class="btn-top"><img src="../src/imgs/up-arrow.png" alt=""></div>
   <div id="home" class="home-container">
@@ -78,14 +73,14 @@ const toggle = (el: HTMLInputElement) => {
         <a class="btn-nav" href="#about">About me</a>
         <a class="btn-nav" href="#skills">Skills</a>
         <a class="btn-nav" href="#projects">Projects</a>
-        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
-            src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
-        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
-            src="./assets/icons/linkedinReact.png" alt="" class="i-linkedin"></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode" class="i-gmail"
-            src="./assets/icons/gmail.png" alt=""></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode" class="i-gmail"
-            src="./assets/icons/gmailReact.png" alt=""></a>
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+            v-if="!reactMode" src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
+        <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+            v-if="reactMode" src="./assets/icons/linkedinReact.png" alt="" class="i-linkedin"></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
+            class="i-gmail" src="./assets/icons/gmail.png" alt=""></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+            class="i-gmail" src="./assets/icons/gmailReact.png" alt=""></a>
         <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
             src="./assets/icons/github.png" alt="" class="i-github"></a>
         <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
@@ -260,18 +255,18 @@ const toggle = (el: HTMLInputElement) => {
         <h2>Tem interesse no meu trabalho?</h2>
         <h3>Entre em contato comigo :&#41</h3>
         <div class="contact-row">
-          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode" class="contact-icon"
-              src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
-          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="reactMode" class="contact-icon"
-              src="../src/assets/icons/wppReact.png" alt="" srcset=""></a>
-          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
-              class="contact-icon" src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
-          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
-              class="contact-icon" src="../src/assets/icons/gmailReact.png" alt="" srcset=""></a>
-          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
-              class="contact-icon" src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
-          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
-              class="contact-icon" src="../src/assets/icons/linkedinReact.png" alt="" srcset=""></a>
+          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
+              class="contact-icon" src="../src/assets/icons/wppFooter.png" alt="" srcset=""></a>
+          <a href="http://wa.me/5521973972811" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+              class="contact-icon" src="../src/assets/icons/wppReact.png" alt="" srcset=""></a>
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+              v-if="!reactMode" class="contact-icon" src="../src/assets/icons/gmailFooter.png" alt="" srcset=""></a>
+          <a href="http://mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+              v-if="reactMode" class="contact-icon" src="../src/assets/icons/gmailReact.png" alt="" srcset=""></a>
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+              v-if="!reactMode" class="contact-icon" src="../src/assets/icons/linkedinFooter.png" alt="" srcset=""></a>
+          <a href="http://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
+              v-if="reactMode" class="contact-icon" src="../src/assets/icons/linkedinReact.png" alt="" srcset=""></a>
         </div>
         <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
           <img v-if="!reactMode" class="contact-git" src="../src/assets/icons/github.png" alt="">
@@ -286,7 +281,6 @@ const toggle = (el: HTMLInputElement) => {
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 // VAR
 $color-primary: #212428;
@@ -672,7 +666,6 @@ $main-react: #25BEEF;
 }
 
 //===== HOME END =====
-
 .about-container {
 
   width: 100vw;
@@ -803,7 +796,7 @@ $main-react: #25BEEF;
     h1 {
       top: 520px !important;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) !important;
       width: 300px;
       display: flex;
       justify-content: center;
@@ -813,7 +806,7 @@ $main-react: #25BEEF;
   .about-line {
     top: 630px !important;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
   }
 
   .svg-code {
@@ -857,7 +850,6 @@ $main-react: #25BEEF;
 }
 
 //===== ABOUT END =====
-
 .skills-container {
   width: 100vw;
   height: 100vh;
@@ -913,7 +905,7 @@ $main-react: #25BEEF;
       }
 
       .skills-itens {
-        width: 50%;
+        width: 100%;
         height: 80%;
         border: 1px solid v-bind(mainColor);
         transition: .5s all;
@@ -966,7 +958,6 @@ $main-react: #25BEEF;
             top: 150px;
             transition: .4s all;
             width: 100px;
-
           }
 
           h2 {
@@ -1011,7 +1002,7 @@ $main-react: #25BEEF;
         }
 
         &:hover {
-          width: 65%;
+          width: 100%;
         }
       }
     }
@@ -1021,7 +1012,6 @@ $main-react: #25BEEF;
 }
 
 @media screen and (max-width: 1110px) {
-
   .skills-container {
     margin-top: 300px;
     height: 2300px;
@@ -1043,26 +1033,113 @@ $main-react: #25BEEF;
   .skills-itens {
     height: 95% !important;
   }
-
 }
 
 @media screen and (max-width: 750px) {
+  .skills-itens {
+    height: 90% !important;
+    width: 50% !important;
+  }
+
   .skills-flex {
-    flex-direction: column;
-    height: 100% !important;
+    width: 80% !important;
+    height: 500px !important;
   }
 
   .skills-container {
-    height: 3850px !important;
+    height: 1850px !important;
   }
 
   .skills-content {
-    height: 3600px !important;
+    height: 1850px !important;
+  }
+
+  .skills-text {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1rem !important;
+    }
+
+    .skills-line {
+      width: 150px !important;
+    }
+  }
+
+  .itens-icon {
+    img {
+      width: 80px !important;
+    }
+
+    p {
+      bottom: 0 !important;
+      font-size: .8rem !important;
+      width: 90% !important;
+    }
+
+    &:hover p {
+      bottom: 50px !important;
+      opacity: 100% !important;
+    }
+
+    &:hover h2 {
+      top: 200px !important;
+    }
+
+    &:hover h3 {
+      top: 230px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skills-container {
+    height: 2000px !important;
+  }
+
+  .skills-content {
+    height: 2000px !important;
+  }
+
+  .skills-itens {
+    height: 90% !important;
+    width: 40% !important;
+  }
+
+  .skills-flex {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .itens-icon {
+    img {
+      width: 80px !important;
+    }
+
+    p {
+      bottom: 0 !important;
+      font-size: .8rem !important;
+      width: 90% !important;
+    }
+
+    &:hover p {
+      bottom: 50px !important;
+      opacity: 100% !important;
+    }
+
+    &:hover h2 {
+      top: 200px !important;
+    }
+
+    &:hover h3 {
+      top: 230px !important;
+    }
   }
 }
 
 //===== SKILLS END =====
-
 .projects-container {
   width: 100vw;
   height: 100vh;
@@ -1102,7 +1179,6 @@ $main-react: #25BEEF;
       width: 40%;
       height: 100%;
 
-
       .svg-projects {
         width: 130%;
       }
@@ -1130,7 +1206,6 @@ $main-react: #25BEEF;
           height: 250px;
         }
 
-
         .projects-content-rl {
           width: 100%;
           height: 250px;
@@ -1151,7 +1226,6 @@ $main-react: #25BEEF;
           &:hover h3 {
             letter-spacing: 3px;
           }
-
 
           &:hover {
             scale: 1.2;
@@ -1223,7 +1297,6 @@ $main-react: #25BEEF;
             letter-spacing: 3px;
           }
 
-
           &:hover {
             scale: 1.2;
           }
@@ -1271,26 +1344,24 @@ $main-react: #25BEEF;
             }
           }
         }
-
       }
     }
   }
 }
 
 @media screen and (max-width: 1110px) {
-
   .projects-center {
     h1 {
       top: -200px !important;
       left: 50% !important;
-      transform: translateX(-50%);
+      transform: translateX(-50%) !important;
     }
   }
 
   .projects-line {
     top: -130px !important;
     left: 50% !important;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
   }
 
   .projects-container {
@@ -1304,7 +1375,6 @@ $main-react: #25BEEF;
   .projects-right {
     width: 100% !important;
   }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -1326,7 +1396,6 @@ $main-react: #25BEEF;
   .projects-content {
     margin: 20px 0px !important;
     width: 300px !important;
-
   }
 
   .projects-content-rl {
@@ -1336,7 +1405,6 @@ $main-react: #25BEEF;
 }
 
 //===== PROJECTS END =====
-
 .contact-container {
   width: 100vw;
   height: 100vh;
@@ -1490,5 +1558,4 @@ $main-react: #25BEEF;
   }
 }
 
-//===== CONTACT END =====
-</style>
+//===== CONTACT END =====</style>
