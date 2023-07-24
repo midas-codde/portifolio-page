@@ -218,7 +218,7 @@ const toggle = (el: HTMLInputElement) => {
             <div class="projects-content-rl">
               <img class="project-img p" src="../src/imgs/project1.png" alt="">
               <h2>Jogo da Forca</h2>
-              <p>Jogo da forca desenvolvido em JavaScript com interação de cores definidas.</p>
+              <p>Jogo da forca desenvolvido em Java Script com interação de cores definidas.</p>
             </div>
           </a>
           <a href="https://github.com/RichardMidas/company-plataform" target="_blank">
