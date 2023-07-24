@@ -74,16 +74,16 @@ const toggle = (el: HTMLInputElement) => {
         <a class="btn-nav" href="#skills">Skills</a>
         <a class="btn-nav" href="#projects">Projects</a>
         <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
-            v-if="!reactMode" src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
+            v-show="!reactMode" src="./assets/icons/linkedin.png" alt="" class="i-linkedin"></a>
         <a href="https://www.linkedin.com/in/richard-israel-667462246/" target="_blank" rel="noopener noreferrer"><img
-            v-if="reactMode" src="./assets/icons/linkedinReact.png" alt="" class="i-linkedin"></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
-            class="i-gmail" src="./assets/icons/gmail.png" alt=""></a>
-        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
-            class="i-gmail" src="./assets/icons/gmailReact.png" alt=""></a>
-        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="!reactMode"
+            v-show="reactMode" src="./assets/icons/linkedinReact.png" alt="" class="i-linkedin"></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+            v-show="!reactMode" class="i-gmail" src="./assets/icons/gmail.png" alt=""></a>
+        <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
+            v-show="reactMode" class="i-gmail" src="./assets/icons/gmailReact.png" alt=""></a>
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-show="!reactMode"
             src="./assets/icons/github.png" alt="" class="i-github"></a>
-        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-if="reactMode"
+        <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-show="reactMode"
             src="./assets/icons/githubReact.png" alt="" class="i-github"></a>
       </div>
       <div data-aos="fade-up" data-aos-duration="1000" class="home-content">
@@ -115,8 +115,9 @@ const toggle = (el: HTMLInputElement) => {
       <svgCodeReact v-else data-aos="fade-left" data-aos-duration="1000" class="svg-code" />
       <div data-aos="fade-right" data-aos-duration="1000" class="about-line"></div>
       <h1 data-aos="fade-right" data-aos-duration="1000">Sobre mim</h1>
-      <div class="about-left">
-        <svgPc v-if="!reactMode" data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
+      <div class="about-left" data-aos="fade-right" data-aos-duration="1000">
+        <img class="about-profile" src="../src/imgs/profile.png" alt="">
+        <svgPc v-if="!reactMode" class="svg-pc" />
         <svgPcReact v-else data-aos="fade-right" data-aos-duration="1000" class="svg-pc" />
       </div>
       <div data-aos="fade-left" data-aos-duration="1000" class="about-right">
@@ -714,6 +715,18 @@ $main-react: #25BEEF;
       height: 100%;
       position: relative;
 
+      .about-profile {
+        top: 370px;
+        right: 91px;
+        width: 490px;
+        position: absolute;
+        z-index: 2;
+
+        &:not(:hover) {
+          filter: grayscale(1);
+        }
+      }
+
       .svg-pc {
         width: 1000px;
         position: absolute;
@@ -771,9 +784,10 @@ $main-react: #25BEEF;
     height: 1500px !important;
 
     .svg-pc {
-      width: 800px !important;
-      left: 40% !important;
-      transform: translateX(-50%) !important;
+      // width: 800px !important;
+      // left: 40% !important;
+      // transform: translateX(-50%) !important;
+      display: none;
     }
 
 
@@ -781,6 +795,12 @@ $main-react: #25BEEF;
       width: 100% !important;
       display: flex !important;
       justify-content: center !important;
+
+      .about-profile {
+        width: 700px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
     }
 
     .about-right {
@@ -818,21 +838,26 @@ $main-react: #25BEEF;
 
   .about-center {
     h1 {
-      top: 320px !important;
+      // top: 320px !important;
       font-size: 2rem !important;
     }
 
     .about-line {
-      top: 430px !important;
+      top: 600px !important;
       width: 400px !important;
     }
 
-    .svg-pc {
-      width: 600px !important;
-      bottom: -100px !important;
+    .about-left {
+      height: 400px !important;
+      .about-profile {
+        top: 150px !important;
+        width: 400px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
     }
-
     .about-right {
+      height: 400px !important;
       align-items: start !important;
 
       h2 {
@@ -1558,4 +1583,5 @@ $main-react: #25BEEF;
   }
 }
 
-//===== CONTACT END =====</style>
+//===== CONTACT END =====
+</style>
