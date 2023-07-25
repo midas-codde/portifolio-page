@@ -720,6 +720,7 @@ $main-react: #25BEEF;
         width: 490px;
         position: absolute;
         z-index: 2;
+        transition: .3s all;
 
         &:not(:hover) {
           filter: grayscale(1);
