@@ -317,11 +317,11 @@ $main-react: #25BEEF;
 
 .home-container {
   width: 100vw;
-  height: 100vh;
-  position: relative;
+  height: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   .background {
     position: absolute;
@@ -670,11 +670,10 @@ $main-react: #25BEEF;
 .about-container {
 
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 
   .about-center {
     width: 1500px;
@@ -849,6 +848,7 @@ $main-react: #25BEEF;
 
     .about-left {
       height: 400px !important;
+
       .about-profile {
         top: 150px !important;
         width: 400px !important;
@@ -856,6 +856,7 @@ $main-react: #25BEEF;
         transform: translateX(-50%) !important;
       }
     }
+
     .about-right {
       height: 400px !important;
       align-items: start !important;
@@ -877,7 +878,7 @@ $main-react: #25BEEF;
 //===== ABOUT END =====
 .skills-container {
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   background-color: $color-primary;
   display: flex;
   justify-content: center;
@@ -1167,7 +1168,7 @@ $main-react: #25BEEF;
 //===== SKILLS END =====
 .projects-container {
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   justify-content: center;
 
@@ -1432,7 +1433,7 @@ $main-react: #25BEEF;
 //===== PROJECTS END =====
 .contact-container {
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   position: relative;
   display: flex;
   justify-content: center;
