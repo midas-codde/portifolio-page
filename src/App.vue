@@ -91,7 +91,7 @@ const toggle = (el: HTMLInputElement) => {
                <p class="text-typed">Hellow world!</p>
             </div>
             <h1>Olá, eu sou <span>Midas</span>!</h1>
-            <h2>Desenvolvedor Front end</h2>
+            <h2>Desenvolvedor Web</h2>
             <p class="text-content">Sou desenvolvedor web, atualmente focado em Front-end.
                Tenho experiência com Freelancer e projetos pessoais.
                Estudo um pouco de Back-end com a finalidade de um dia
@@ -200,7 +200,6 @@ const toggle = (el: HTMLInputElement) => {
                      <div class="itens-bg"></div>
                      <img src="./assets/icons/php-icon.png" alt="">
                      <h2>PHP</h2>
-                     <h3>(básico)</h3>
                      <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de
                         aplicações
                         presentes e atuantes no lado do servidor.</p>
