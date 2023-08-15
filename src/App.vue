@@ -219,7 +219,7 @@ const toggle = (el: HTMLInputElement) => {
          </div>
          <div class="projects-right">
             <div data-aos="fade-left" data-aos-duration="500" class="projects-row">
-               <a href="https://github.com/RichardMidas/Jogo-da-forca" target="_blank">
+               <a href="https://midas-jogodaforca.netlify.app" target="_blank">
                   <div class="projects-content-rl">
                      <img class="project-img p" src="../src/imgs/project1.png" alt="">
                      <h2>Jogo da Forca</h2>
@@ -236,9 +236,13 @@ const toggle = (el: HTMLInputElement) => {
                </a>
             </div>
             <div data-aos="fade-right" data-aos-duration="1000" class="projects-row">
-               <div class="projects-content">
-                  <h3>Em breve</h3>
-               </div>
+               <a href="https://dog-club-page.netlify.app" target="_blank">
+                  <div class="projects-content-rl">
+                     <img class="project-img p" src="../src/imgs/project3.png" alt="">
+                        <h2>Dog page</h2>
+                        <p>Um site interativo sobre cachorros.</p>
+                  </div>
+               </a>
                <div class="projects-content">
                   <h3>Em breve</h3>
                </div>
