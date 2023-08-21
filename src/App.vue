@@ -92,9 +92,9 @@ const toggle = (el: HTMLInputElement) => {
             </div>
             <h1>Olá, eu sou <span>Midas</span>!</h1>
             <h2>Desenvolvedor Web</h2>
-            <p class="text-content">Sou desenvolvedor web, atualmente focado em Front-end.
+            <p class="text-content">Sou desenvolvedor web, atualmente profissional em Front-end.
                Tenho experiência com Freelancer e projetos pessoais.
-               Estudo um pouco de Back-end com a finalidade de um dia
+               tenho conhecimentos básicos em Back-end e continuo estudando com a finalidade de um dia
                me tornar um Programador FullStack.</p>
             <div class="btns-row">
                <a href="https://github.com/RichardMidas" target="_blank">
@@ -126,7 +126,7 @@ const toggle = (el: HTMLInputElement) => {
                <p>Tenho 20 anos e atualmente moro no Rio de Janeiro. Sempre gostei de games e tecnologia e foi através dos
                   jogos que tive interesse na área de programação. Hoje sigo minha carreira dominando as tecnologias
                   ReactJs e
-                  VueJs. Estudo um pouco de PHP para ter conhecimentos sólidos em back-end pra um dia me tornar um
+                  VueJs. Estudo PHP e NodeJs para ter conhecimentos sólidos em back-end pra um dia me tornar um
                   Desenvolvedor
                   FullStack. ☕</p>
             </div>
@@ -239,8 +239,8 @@ const toggle = (el: HTMLInputElement) => {
                <a href="https://dog-club-page.netlify.app" target="_blank">
                   <div class="projects-content-rl">
                      <img class="project-img p" src="../src/imgs/project3.png" alt="">
-                        <h2>Dog page</h2>
-                        <p>Um site interativo sobre cachorros.</p>
+                     <h2>Dog page</h2>
+                     <p>Um site interativo sobre cachorros.</p>
                   </div>
                </a>
                <div class="projects-content">
@@ -1597,4 +1597,5 @@ $main-react: #25BEEF;
    }
 }
 
-//===== CONTACT END =====</style>
+//===== CONTACT END =====
+</style>
