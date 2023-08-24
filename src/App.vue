@@ -226,11 +226,11 @@ const toggle = (el: HTMLInputElement) => {
                      <p>Jogo da forca desenvolvido em Java Script com interação de cores definidas.</p>
                   </div>
                </a>
-               <a href="https://github.com/RichardMidas/company-plataform" target="_blank">
+               <a href="https://github.com/midas-codde/react-company-plataform" target="_blank">
                   <div class="projects-content-rl">
                      <img class="project-img p" src="../src/imgs/project2.png" alt="">
                      <h2>Company Plataform</h2>
-                     <p>Interface feita em VueJs que simula um sistema gerencial de uma empresa. <br> (Em desenvolvimento)
+                     <p>Interface feita em ReactJs que simula um sistema gerencial de uma empresa. <br> (Em desenvolvimento)
                      </p>
                   </div>
                </a>
