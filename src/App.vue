@@ -81,9 +81,9 @@ const toggle = (el: HTMLInputElement) => {
                   v-show="!reactMode" class="i-gmail" src="./assets/icons/gmail.png" alt=""></a>
             <a href="mailto:richardisraelmagalhaes@gmail.com" target="_blank" rel="noopener noreferrer"><img
                   v-show="reactMode" class="i-gmail" src="./assets/icons/gmailReact.png" alt=""></a>
-            <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-show="!reactMode"
+            <a href="https://github.com/midas-codde" target="_blank" rel="noopener noreferrer"><img v-show="!reactMode"
                   src="./assets/icons/github.png" alt="" class="i-github"></a>
-            <a href="https://github.com/RichardMidas" target="_blank" rel="noopener noreferrer"><img v-show="reactMode"
+            <a href="https://github.com/midas-codde" target="_blank" rel="noopener noreferrer"><img v-show="reactMode"
                   src="./assets/icons/githubReact.png" alt="" class="i-github"></a>
          </div>
          <div data-aos="fade-up" data-aos-duration="1000" class="home-content">
@@ -281,7 +281,7 @@ const toggle = (el: HTMLInputElement) => {
                   rel="noopener noreferrer"><img v-if="reactMode" class="contact-icon"
                      src="../src/assets/icons/linkedinReact.png" alt="" srcset=""></a>
             </div>
-            <a class="contact-btn" href="https://github.com/RichardMidas" target="_blank">
+            <a class="contact-btn" href="https://github.com/midas-codde" target="_blank">
                <img v-if="!reactMode" class="contact-git" src="../src/assets/icons/github.png" alt="">
                <img v-if="reactMode" class="contact-git" src="../src/assets/icons/githubReact.png" alt="">
             </a>
