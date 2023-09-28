@@ -126,7 +126,7 @@ const toggle = (el: HTMLInputElement) => {
                <p>Tenho 20 anos e atualmente moro no Rio de Janeiro. Sempre gostei de games e tecnologia e foi através dos
                   jogos que tive interesse na área de programação. Hoje sigo minha carreira dominando as tecnologias
                   ReactJs e
-                  VueJs. Estudo PHP e NodeJs para ter conhecimentos sólidos em back-end pra um dia me tornar um
+                  VueJs. Estudo NodeJs para ter conhecimentos sólidos em back-end pra um dia me tornar um
                   Desenvolvedor
                   FullStack. ☕</p>
             </div>
@@ -198,11 +198,10 @@ const toggle = (el: HTMLInputElement) => {
                <div class="skills-itens">
                   <div class="itens-icon">
                      <div class="itens-bg"></div>
-                     <img src="./assets/icons/php-icon.png" alt="">
-                     <h2>PHP</h2>
-                     <p>PHP é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de
-                        aplicações
-                        presentes e atuantes no lado do servidor.</p>
+                     <img src="./assets/icons/node-js.png" alt="">
+                     <h2>Node Js</h2>
+                     <p>Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e
+                        que permite a execução de códigos JavaScript fora de um navegador web.</p>
                   </div>
                </div>
             </div>
@@ -230,7 +229,8 @@ const toggle = (el: HTMLInputElement) => {
                   <div class="projects-content-rl">
                      <img class="project-img p" src="../src/imgs/project2.png" alt="">
                      <h2>Company Plataform</h2>
-                     <p>Interface feita em ReactJs que simula um sistema gerencial de uma empresa. <br> (Em desenvolvimento)
+                     <p>Interface feita em ReactJs que simula um sistema gerencial de uma empresa. <br> (Em
+                        desenvolvimento)
                      </p>
                   </div>
                </a>
